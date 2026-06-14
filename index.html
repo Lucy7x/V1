@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V1ANA</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ══ IDENTITY ══ -->
+  <div class="identity">
+    <div class="avatar">
+      <img src="imgs/HeikeVIKaiserPony.jpg" alt="avatar" style="width:100%;height:100%;object-fit:cover;" />
+    </div>
+
+    <div class="id-main">
+      <div class="name">V1-ANA<span class="cursor"></span></div>
+      <div class="pronouns">ele/dele · ela/dela</div>
+      <p class="bio-short">
+        "existe uma versão de mim que saiba exatamente o que fazer.<br/>
+        ainda estou procurando ela."
+      </p>
+      <div class="meta-row">
+        <span class="pill">📍 Meridiana, BR</span>
+        <span class="pill">🕐 <span id="tz">--:--</span> BRT</span>
+      </div>
+    </div>
+
+    <!-- DISCORD PRESENCE via Lanyard -->
+    <div class="presence-col">
+      <div class="presence-card inactive" id="dc-game-card">
+        <div class="presence-label presence-label--game">jogando</div>
+        <div class="presence-inner">
+          <img class="presence-img" id="dc-game-img" src="" alt="" />
+          <div class="presence-text">
+            <div class="presence-line" id="dc-game-name">—</div>
+            <div class="presence-line sub" id="dc-game-detail"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="presence-card inactive" id="dc-spotify-card">
+        <div class="presence-label presence-label--spotify">ouvindo</div>
+        <div class="presence-inner">
+          <img class="presence-img" id="dc-spotify-img" src="" alt="" />
+          <div class="presence-text">
+            <div class="presence-line" id="dc-spotify-song">—</div>
+            <div class="presence-line sub" id="dc-spotify-detail"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="presence-status" id="dc-status"></div>
+    </div>
+  </div>
+
+  <!-- ══ SOBRE ══ -->
+  <div class="sec">
+    <div class="sec-head" onclick="toggle(this)">
+      <span class="sec-dash">—</span>
+      <span class="sec-title">sobre mim</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="sec-body">
+      <div class="about-text">
+        <p>
+          olá. me chamo <strong>V1ANA (ou Lucy)</strong>, alguém que passa mais tempo
+          pensando sobre coisas do que as fazendo, mas estou trabalhando nisso.
+          tenho interesse genuíno em como a forma se comunica com nossos sentidos: por que
+          certas interfaces parecem <em>certas</em>, por que certas frases
+          ficam na cabeça, por que o escuro é mais convidativo que o branco.
+        </p>
+        <p>
+          gosto de projetos que <strong>fazem perguntas</strong> em vez de
+          entregar respostas. acho que a incerteza é subestimada como
+          ponto de partida. construo coisas pequenas com uma grande intenção.
+        </p>
+        <p>
+          atualmente explorando design de interfaces, narrativa
+          e o que significa fazer algo que dure.
+        </p>
+      </div>
+      <div class="value-list">
+        <div class="val">prefiro profundidade a amplitude</div>
+        <div class="val">acredito que estética é ética</div>
+        <div class="val">incomodo-me facilmente com o superficial</div>
+        <div class="val">aprendo melhor quebrando coisas</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ HOBBIES ══ -->
+  <div class="sec">
+    <div class="sec-head" onclick="toggle(this)">
+      <span class="sec-dash">—</span>
+      <span class="sec-title">interesses &amp; hobbies</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="sec-body">
+      <div class="hobby-grid">
+        <div class="hob"><span class="hob-icon">🎵</span><span class="hob-name">música</span><span class="hob-desc">synthwave, jumpstyle, breakcore</span></div>
+        <div class="hob"><span class="hob-icon">💻</span><span class="hob-name">código</span><span class="hob-desc">experimentos web &amp; ferramentas</span></div>
+        <div class="hob"><span class="hob-icon">🎮</span><span class="hob-name">jogos</span><span class="hob-desc">narrativos, indie, rpg, fps</span></div>
+        <div class="hob"><span class="hob-icon">✏️</span><span class="hob-name">escrita</span><span class="hob-desc">documentos, ensaios, campanhas e historias</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ JOGOS FAVORITOS ══ -->
+  <div class="sec">
+    <div class="sec-head" onclick="toggle(this)">
+      <span class="sec-dash">—</span>
+      <span class="sec-title">jogos favoritos</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="sec-body">
+      <div class="games-grid">
+        <div class="game-card" style="--banner: url('https://cdn.akamai.steamstatic.com/steam/apps/22380/header.jpg')">
+          <div class="game-rank">nº 01</div>
+          <span class="game-icon">🎮</span>
+          <span class="game-name">Fallout: New Vegas</span>
+          <span class="game-genre">RPG · PC / Console</span>
+          <span class="game-note">10 ⚝</span>
+        </div>
+        <div class="game-card" style="--banner: url('https://cdn.akamai.steamstatic.com/steam/apps/1229490/header.jpg')">
+          <div class="game-rank">nº 02</div>
+          <span class="game-icon">🎮</span>
+          <span class="game-name">Ultrakill</span>
+          <span class="game-genre">FPS · PC</span>
+          <span class="game-note">10 ⚝</span>
+        </div>
+        <div class="game-card" style="--banner: url('https://cdn.akamai.steamstatic.com/steam/apps/1687950/header.jpg')">
+          <div class="game-rank">nº 03</div>
+          <span class="game-icon">🎮</span>
+          <span class="game-name">Persona 5 Royal</span>
+          <span class="game-genre">JRPG · PS4 / PC</span>
+          <span class="game-note">8 ⚝</span>
+        </div>
+        <div class="game-card" style="--banner: url('https://cdn.akamai.steamstatic.com/steam/apps/1262350/header.jpg')">
+          <div class="game-rank">nº 04</div>
+          <span class="game-icon">🎮</span>
+          <span class="game-name">Signalis</span>
+          <span class="game-genre">Survival Horror · PC</span>
+          <span class="game-note">8 ⚝</span>
+        </div>
+        <div class="game-card" style="--banner: url('https://cdn.akamai.steamstatic.com/steam/apps/1086940/header.jpg')">
+          <div class="game-rank">nº 05</div>
+          <span class="game-icon">🎮</span>
+          <span class="game-name">Baldur's Gate 3</span>
+          <span class="game-genre">RPG · PC</span>
+          <span class="game-note">10 ⚝</span>
+        </div>
+        <div class="game-card" style="--banner: url('https://cdn.akamai.steamstatic.com/steam/apps/381210/header.jpg')">
+          <div class="game-rank">nº 06</div>
+          <span class="game-icon">🎮</span>
+          <span class="game-name">Dead By Daylight</span>
+          <span class="game-genre">Survival Horror · PC</span>
+          <span class="game-note">9 ⚝</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FRASES FAVORITAS ══ -->
+  <div class="sec">
+    <div class="sec-head" onclick="toggle(this)">
+      <span class="sec-dash">—</span>
+      <span class="sec-title">frases favoritas</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="sec-body">
+      <div class="quotes-list">
+        <div class="quote-block">
+          <p class="quote-text">If you couldn't stop me... It can happen again. It will keep happening. If war doesn't change, men must change, and so must their symbols.</p>
+          <span class="quote-author">Ulysses [Fallout: New Vegas]</span>
+        </div>
+        <div class="quote-block">
+          <p class="quote-text">The light of the mind alone cannot dispel the whole world's darkness.</p>
+          <span class="quote-author">Joshua Graham [Fallout: New Vegas]</span>
+        </div>
+        <div class="quote-block">
+          <p class="quote-text">They try to put their stake in everything they see. Nobody's dick's that long, not even Long Dick Johnson, and he had a fucking long dick. Thus, the name.</p>
+          <span class="quote-author">Rose of Sharon Cassidy [Fallout: New Vegas]</span>
+        </div>
+        <div class="quote-block">
+          <p class="quote-text">A man chooses, a slave obe- wait no sorry wrong game. We don’t have to dream that we’re important. We are.</p>
+          <span class="quote-author">Mr. House [Fallout: New Vegas]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TOP MÚSICAS ══ -->
+  <div class="sec">
+    <div class="sec-head" onclick="toggle(this)">
+      <span class="sec-dash">—</span>
+      <span class="sec-title">top músicas</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="sec-body">
+      <div class="spotify-header">o que eu gosto</div>
+      <div class="spotify-grid">
+
+        <div class="sp-item">
+          <div class="sp-rank-label">01 — Begin Again</div>
+          <div class="sp-embed">
+            <iframe src="https://open.spotify.com/embed/track/0FmueBcInnz0t8m0zzsMb2?utm_source=generator&theme=0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="sp-item">
+          <div class="sp-rank-label">02 — Femme Fatale</div>
+          <div class="sp-embed">
+            <iframe src="https://open.spotify.com/embed/track/0Cv2FpN7nIVSp9V7K6H4tR?utm_source=generator&theme=0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="sp-item">
+          <div class="sp-rank-label">03 — Clareza</div>
+          <div class="sp-embed">
+            <iframe src="https://open.spotify.com/embed/track/6j4T7Z6sKdkVtL4sIVavAX?utm_source=generator&theme=0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="sp-item">
+          <div class="sp-rank-label">04 — Panoramic Feelings</div>
+          <div class="sp-embed">
+            <iframe src="https://open.spotify.com/embed/track/5KVAbevZVyOeREJ0W0h8sb?utm_source=generator&theme=0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="sp-item">
+          <div class="sp-rank-label">05 — Beginning of the Dream</div>
+          <div class="sp-embed">
+            <iframe src="https://open.spotify.com/embed/track/45NR6MmBjElxShMUhPkHNv?utm_source=generator&theme=0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="sp-item">
+          <div class="sp-rank-label">06 — Full Speed Ahead</div>
+          <div class="sp-embed">
+            <iframe src="https://open.spotify.com/embed/track/3MNNWGsJPBHtaf1SiHQQdz?utm_source=generator&theme=0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ LINKS ══ -->
+  <div class="sec">
+    <div class="sec-head" onclick="toggle(this)">
+      <span class="sec-dash">—</span>
+      <span class="sec-title">links</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="sec-body">
+      <div class="links-grid">
+        <a class="lnk" href="https://x.com/quartz7k" target="_blank" rel="noopener">
+          <span class="lnk-icon">𝕏</span>
+          <span class="lnk-plat">twitter / x</span>
+          <span class="lnk-handle">@quartz7k</span>
+          <span class="lnk-arrow">→</span>
+        </a>
+        <a class="lnk" href="https://github.com/Lucy7x" target="_blank" rel="noopener">
+          <span class="lnk-icon">◈</span>
+          <span class="lnk-plat">github</span>
+          <span class="lnk-handle">Lucy7x</span>
+          <span class="lnk-arrow">→</span>
+        </a>
+        <a class="lnk" href="https://www.instagram.com/quartz7k/" target="_blank" rel="noopener">
+          <span class="lnk-icon">▣</span>
+          <span class="lnk-plat">instagram</span>
+          <span class="lnk-handle">@quartz7k</span>
+          <span class="lnk-arrow">→</span>
+        </a>
+        <a class="lnk" href="https://open.spotify.com/user/31wejol2227edlq4dcnqc5uuspfu" target="_blank" rel="noopener">
+          <span class="lnk-icon">◉</span>
+          <span class="lnk-plat">spotify</span>
+          <span class="lnk-handle">perfil público</span>
+          <span class="lnk-arrow">→</span>
+        </a>
+        <a class="lnk" href="https://discord.com/users/1213505861952212993" target="_blank" rel="noopener">
+          <span class="lnk-icon">◭</span>
+          <span class="lnk-plat">discord</span>
+          <span class="lnk-handle">quartz7k</span>
+          <span class="lnk-arrow">→</span>
+        </a>
+        <a class="lnk" href="https://quartz7k.straw.page/" target="_blank" rel="noopener">
+          <span class="lnk-icon">🌱</span>
+          <span class="lnk-plat">straw page</span>
+          <span class="lnk-handle">quartz7k</span>
+          <span class="lnk-arrow">→</span>
+        </a>
+        <a class="lnk" href="#" target="_blank" rel="noopener">
+          <span class="lnk-icon">✦</span>
+          <span class="lnk-plat">projeto</span>
+          <span class="lnk-handle">meridiana</span>
+          <span class="lnk-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CONTACT ══ -->
+  <div class="contact">
+    <span class="contact-hint">quer falar?</span>
+    <a class="contact-mail" href="https://discord.com/users/1213505861952212993" target="_blank" rel="noopener">quartz7k no discord</a>
+  </div>
+
+  <div class="footer">
+    <span>⚝</span>
+    <span id="year"></span>
+  </div>
+
+</div>
+
+<!-- botão de tema fixo no canto -->
+<button class="theme-toggle" id="theme-btn" title="alternar tema" onclick="toggleTheme()">◐</button>
+
+<script>
+  /* ── TEMA ── */
+  function toggleTheme() {
+    const isLight = document.documentElement.classList.toggle('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    document.getElementById('theme-btn').textContent = isLight ? '◑' : '◐';
+  }
+
+  // aplica tema salvo ao carregar
+  (function() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') {
+      document.documentElement.classList.add('light');
+      document.getElementById('theme-btn').textContent = '◑';
+    }
+  })();
+
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function updateTime() {
+    const t = new Date().toLocaleTimeString('pt-BR', {
+      timeZone: 'America/Sao_Paulo',
+      hour: '2-digit', minute: '2-digit'
+    });
+    const el = document.getElementById('tz');
+    if (el) el.textContent = t;
+  }
+  updateTime();
+  setInterval(updateTime, 30000);
+
+  /* ── ACCORDION ── */
+  function toggle(head) {
+    const body = head.nextElementSibling;
+    const chev = head.querySelector('.chevron');
+    const isOpen = body.classList.contains('open');
+    document.querySelectorAll('.sec-body').forEach(b => b.classList.remove('open'));
+    document.querySelectorAll('.chevron').forEach(c => c.classList.remove('open'));
+    if (!isOpen) {
+      body.classList.add('open');
+      chev.classList.add('open');
+    }
+  }
+
+  /* ── LANYARD ── */
+  const DISCORD_ID = '1213505861952212993';
+
+  async function fetchPresence() {
+    try {
+      const res = await fetch(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`);
+      const { data } = await res.json();
+
+      const isActive = data.discord_status !== 'offline';
+
+      /* ── JOGO ── */
+      const gmCard   = document.getElementById('dc-game-card');
+      const gmName   = document.getElementById('dc-game-name');
+      const gmDetail = document.getElementById('dc-game-detail');
+      const gmImg    = document.getElementById('dc-game-img');
+      const game     = data.activities?.find(a => a.type === 0);
+
+      if (game && isActive) {
+        gmCard.classList.remove('inactive');
+        gmName.textContent   = game.name;
+        gmDetail.textContent = game.details || game.state || '';
+        gmImg.style.display  = 'none';
+
+        if (game.application_id) {
+          const id = game.application_id;
+
+          if (game.assets?.large_image) {
+            const raw = game.assets.large_image;
+            const url = raw.startsWith('mp:external/')
+              ? 'https://media.discordapp.net/external/' + raw.replace('mp:external/', '')
+              : `https://cdn.discordapp.com/app-assets/${id}/${raw}.png`;
+            gmImg.src = url;
+            gmImg.style.display = 'block';
+            gmImg.onerror = () => { gmImg.style.display = 'none'; };
+
+          } else if (game.assets?.small_image) {
+            const raw = game.assets.small_image;
+            const url = raw.startsWith('mp:external/')
+              ? 'https://media.discordapp.net/external/' + raw.replace('mp:external/', '')
+              : `https://cdn.discordapp.com/app-assets/${id}/${raw}.png`;
+            gmImg.src = url;
+            gmImg.style.display = 'block';
+            gmImg.onerror = () => { gmImg.style.display = 'none'; };
+
+          } else {
+            // sem assets no payload — usa endpoint público RPC do Discord (sem CORS)
+            fetch(`https://discord.com/api/v9/oauth2/applications/${id}/rpc`)
+              .then(r => r.ok ? r.json() : null)
+              .then(app => {
+                if (app?.icon) {
+                  gmImg.src = `https://cdn.discordapp.com/app-icons/${id}/${app.icon}.png?size=128`;
+                  gmImg.style.display = 'block';
+                  gmImg.onerror = () => { gmImg.style.display = 'none'; };
+                }
+              })
+              .catch(() => {});
+          }
+        }
+      } else {
+        gmCard.classList.add('inactive');
+        gmName.textContent   = '—';
+        gmDetail.textContent = '';
+        gmImg.style.display  = 'none';
+      }
+
+      /* ── SPOTIFY ── */
+      const spCard   = document.getElementById('dc-spotify-card');
+      const spSong   = document.getElementById('dc-spotify-song');
+      const spDetail = document.getElementById('dc-spotify-detail');
+      const spImg    = document.getElementById('dc-spotify-img');
+
+      if (data.spotify && isActive) {
+        const sp = data.spotify;
+        spCard.classList.remove('inactive');
+        spSong.textContent   = sp.song;
+        spDetail.textContent = sp.artist;
+        if (sp.album_art_url) {
+          spImg.src = sp.album_art_url;
+          spImg.style.display = 'block';
+        } else {
+          spImg.style.display = 'none';
+        }
+      } else {
+        spCard.classList.add('inactive');
+        spSong.textContent   = '—';
+        spDetail.textContent = '';
+        spImg.style.display  = 'none';
+      }
+
+      /* ── STATUS — só mostra se há alguma atividade ── */
+      const statEl  = document.getElementById('dc-status');
+      const hasAny  = (game && isActive) || (data.spotify && isActive);
+      if (hasAny) {
+        statEl.innerHTML = '<span class="status-dot-live"></span> online';
+      } else {
+        statEl.textContent = '';
+      }
+
+    } catch {
+      /* silencia erro de rede */
+    }
+  }
+
+  fetchPresence();
+  setInterval(fetchPresence, 15000);
+</script>
+</body>
+</html>
