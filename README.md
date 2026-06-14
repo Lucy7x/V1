@@ -37,7 +37,7 @@ site de apresentação pessoal com estética dark/monospace, integração com Di
 
 | seção | descrição |
 |---|---|
-| sobre mim | bio e valores pessoais |
+| sobre mim | bio |
 | interesses & hobbies | música, código, jogos, escrita |
 | jogos favoritos | 6 jogos com banner da Steam no fundo |
 | frases favoritas | citações que eu gosto |
