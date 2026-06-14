@@ -34,7 +34,7 @@ site de apresentação pessoal com estética dark/monospace, integração com Di
 | sobre mim | bio |
 | interesses & hobbies | música, código, jogos, escrita |
 | jogos favoritos | 6 jogos com gênero e nota pessoal |
-| frases favoritas | citações que marcaram |
+| frases favoritas | citações que eu gosto |
 | top músicas | 6 faixas com player do Spotify |
 | links | redes sociais e projetos |
 
